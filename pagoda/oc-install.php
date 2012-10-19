@@ -34,7 +34,7 @@ function wget_ssl($src, $dst){
 	$opt = array(
 		CURLOPT_URL => $src,
 		CURLOPT_HEADER => FALSE,
-		CURLOPT_FILE => $fp
+		CURLOPT_FILE => $fp,
 		CURLOPT_SSL_VERIFYPEER => TRUE,
 		CURLOPT_SSL_VERIFYHOST => 2,
 		CURLOPT_CAINFO, dirname(__FILE__).'/GTECyberTrustGlobalRoot.crt'

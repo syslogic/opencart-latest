@@ -145,14 +145,6 @@ class ControllerStep3 extends Controller {
 			mysql_close($connection);
 		}
 		
-		if (!is_writable(DIR_OPENCART . 'config.php')) {
-			$this->error['warning'] = 'Error: Could not write to config.php please check you have set the correct permissions on: ' . DIR_OPENCART . 'config.php!';
-		}
-		
-		if (!is_writable(DIR_OPENCART . 'admin/config.php')) {
-			$this->error['warning'] = 'Error: Could not write to config.php please check you have set the correct permissions on: ' . DIR_OPENCART . 'admin/config.php!';
-		}
-		
 		if (!$this->error) {
 			return true;
 		} else {

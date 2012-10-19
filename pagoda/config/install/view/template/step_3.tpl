@@ -11,7 +11,7 @@
         <table>
           <tr>
             <td width="185"><span class="required">*</span>Database Host:</td>
-            <td><input type="text" name="db_host" value="<?php echo $_SERVER['DB1_HOST']; ?>" />
+            <td><input type="text" name="db_host" readonly="readonly" value="<?php echo $_SERVER['DB1_HOST']; ?>" />
               <br />
               <?php if ($error_db_host) { ?>
               <span class="required"><?php echo $error_db_host; ?></span>
@@ -19,7 +19,7 @@
           </tr>
           <tr>
             <td><span class="required">*</span>User:</td>
-            <td><input type="text" name="db_user" value="<?php echo $_SERVER['DB1_USER']; ?>" />
+            <td><input type="text" name="db_user" readonly="readonly" value="<?php echo $_SERVER['DB1_USER']; ?>" />
               <br />
               <?php if ($error_db_user) { ?>
               <span class="required"><?php echo $error_db_user; ?></span>
@@ -27,11 +27,11 @@
           </tr>
           <tr>
             <td>Password:</td>
-            <td><input type="text" name="db_password" value="<?php echo $_SERVER['DB1_PASS']; ?>" /></td>
+            <td><input type="text" name="db_password" readonly="readonly" value="<?php echo $_SERVER['DB1_PASS']; ?>" /></td>
           </tr>
           <tr>
             <td><span class="required">*</span>Database Name:</td>
-            <td><input type="text" name="db_name" value="<?php echo $_SERVER['DB1_NAME']; ?>" />
+            <td><input type="text" name="db_name" readonly="readonly" value="<?php echo $_SERVER['DB1_NAME']; ?>" />
               <br />
               <?php if ($error_db_name) { ?>
               <span class="required"><?php echo $error_db_name; ?></span>
@@ -39,7 +39,7 @@
           </tr>
           <tr>
             <td>Database Prefix:</td>
-            <td><input type="text" name="db_prefix" value="<?php echo $db_prefix; ?>" /></td>
+            <td><input type="text" name="db_prefix" readonly="readonly" value="<?php echo $db_prefix; ?>" /></td>
           </tr>
         </table>
       </div>

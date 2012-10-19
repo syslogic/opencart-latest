@@ -97,11 +97,11 @@
           </tr>
           <tr>
             <td><?php echo $config_catalog; ?></td>
-            <td><span class="good">R/O</span></td>
+            <td><span class="good">Read Only</span></td>
           </tr>
           <tr>
             <td><?php echo $config_admin; ?></td>
-            <td><span class="good">R/O</span></td>
+            <td><span class="good">Read Only</span></td>
           </tr>
         </table>
       </div>

@@ -21,7 +21,7 @@ wget($src, $dst);
 /* extract the package */
 $zip = new ZipArchive;
 if($zip->open($dst) === TRUE) {
-	$zip->extractTo(dirname(__FILE__), 'opencart_v'.$version);
+	$zip->extractTo(dirname(__FILE__));
 	$zip->close();
 }
 

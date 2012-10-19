@@ -29,17 +29,9 @@ if($zip->open($dst) === TRUE) {
 echo 'openCart v'.$version.' will now be deployed.';
 
 function wget_ssl($src, $dst){
-	if(file_exists($dst)){unlink($dst);}
 	$fp = fopen($dst, 'w');
-	$log=fopen(dirname(__FILE__).'/curl.log', 'w');
 	$curl = curl_init();
-	$opt = array(
-		CURLOPT_URL => $src,
-		CURLOPT_HEADER => FALSE,
-		CURLOPT_FILE => $fp,
-		CURLOPT_VERBOSE => TRUE,
-		CURLOPT_STDERR => $log
-	);
+	$opt = array(CURLOPT_URL => $src, CURLOPT_HEADER => FALSE, CURLOPT_FILE => $fp);
 	curl_setopt_array($curl, $opt);
 	$rsp = curl_exec($curl);
 	if($rsp===FALSE){
@@ -47,7 +39,6 @@ function wget_ssl($src, $dst){
 	}
 	$info = curl_getinfo($curl);
 	curl_close($curl);
-	fclose($log);
 	fclose($fp);
 	
 	/* cURL stats */

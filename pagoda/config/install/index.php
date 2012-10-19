@@ -18,18 +18,6 @@ define('DIR_CONFIG', DIR_SYSTEM . 'config/');
 // Upgrade
 $upgrade = false;
 
-if (filesize('../config.php') > 0) {
-	$upgrade = true;
-	
-	$file = file(DIR_OPENCART . 'config.php');
-	
-	foreach ($file as $num => $line) {
-		if (strpos(strtoupper($line), 'DB_') !== false) {
-			eval($line);
-		}
-	}
-}
-
 // Startup
 require_once(DIR_SYSTEM . 'startup.php');
 

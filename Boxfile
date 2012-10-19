@@ -2,8 +2,10 @@ web1:
   name: opencart
   php_extensions:
     - mysql
+    - mcrypt
     - curl
     - zip
+    - gd
   shared_writable_dirs:
     - system/cache/
     - system/logs/

@@ -12,23 +12,34 @@ $version='1.5.4.1';
 $fn='opencart_v'.$version.'.zip';
 $src='http://cloud.github.com/downloads/opencart/opencart/'.$fn;
 $base_dir=str_replace('/pagoda','', dirname(__FILE__));
-$upload=dirname(__FILE__).'/opencart_v'.$version.'/upload';
+$upload=dirname(__FILE__).'/opencart_v'.$version.'/upload/';
 $dst=$base_dir.'/pagoda/'.$fn;
 
-/* fetch the package */
-wget_ssl($src, $dst);
-
-/* extract the package */
+/* fetch & extract the package */
+wget($src, $dst);
 $zip = new ZipArchive;
 if($zip->open($dst) === TRUE) {
 	$zip->extractTo(dirname(__FILE__));
 	$zip->close();
 }
 
+/* patching the installer */
+$files=array(
+	'config.php',
+	'admin/config.php',
+	'install/controller/step_2.php',
+	'install/controller/step_3.php',
+	'install/template/step_2.tpl',
+	'install/template/step_3.tpl'
+);
+foreach($files as $file) {
+	copy('pagoda/config/'.$file, $upload.$file);
+}
+
 /* the end */
 echo 'openCart v'.$version.' will now be deployed.';
 
-function wget_ssl($src, $dst){
+function wget($src, $dst){
 	$fp = fopen($dst, 'w');
 	$curl = curl_init();
 	$opt = array(CURLOPT_URL => $src, CURLOPT_HEADER => FALSE, CURLOPT_FILE => $fp);

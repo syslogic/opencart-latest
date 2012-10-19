@@ -13,7 +13,6 @@ web1:
     - image/
   after_build:
     - "php pagoda/oc-install.php"
-    - "rsync -avh pagoda/config pagoda/opencart_v1.5.4.1/upload"
     - "mv pagoda/opencart_v1.5.4.1/upload/image/cache pagoda/cache"
     - "mv pagoda/opencart_v1.5.4.1/upload/image/data pagoda/data"
     - "mv pagoda/opencart_v1.5.4.1/upload/* ./"

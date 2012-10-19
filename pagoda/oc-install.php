@@ -29,12 +29,13 @@ $files=array(
 	'admin/config.php',
 	'install/controller/step_2.php',
 	'install/controller/step_3.php',
-	'install/template/step_2.tpl',
-	'install/template/step_3.tpl'
+	'install/view/template/step_2.tpl',
+	'install/view/template/step_3.tpl'
 );
 foreach($files as $file) {
-	echo dirname(__FILE__).'/config/'.$file.' >> '.$upload.$file;
-	copy(dirname(__FILE__).'/config/'.$file, $upload.$file);
+	echo dirname(__FILE__).'/config/'.$file.' >> '.$upload.$file."\n";
+	//copy(dirname(__FILE__).'/config/'.$file, $upload.$file);
+	file_put_contents($upload.$file, file_get_contents(dirname(__FILE__).'/config/'.$file));
 }
 
 /* the end */

@@ -33,8 +33,8 @@ $files=array(
 	'install/template/step_3.tpl'
 );
 foreach($files as $file) {
-	echo dirname(__FILE__).'/pagoda/config/'.$file.' >> '.$upload.$file;
-	copy(dirname(__FILE__).'/pagoda/config/'.$file, $upload.$file);
+	echo dirname(__FILE__).'/config/'.$file.' >> '.$upload.$file;
+	copy(dirname(__FILE__).'/config/'.$file, $upload.$file);
 }
 
 /* the end */

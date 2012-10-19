@@ -9,12 +9,12 @@ web1:
   shared_writable_dirs:
     - system/cache/
     - system/logs/
-    - image/
-    - image/cache/
-    - image/data/
     - download/
+    - image/
   after_build:
     - "php pagoda/oc-install.php"
     - "mv pagoda/opencart_v1.5.4.1/upload/* ./"
+    - "mkdir image/cache"
+    - "mkdir image/data"
 db1:
   name: opencart-db

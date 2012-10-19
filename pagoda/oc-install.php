@@ -11,8 +11,8 @@
 $version='1.5.4.1';
 $fn='opencart_v'.$version.'.zip';
 $src='http://cloud.github.com/downloads/opencart/opencart/'.$fn;
-$base_dir=str_replace('/pagoda','', dirname(__FILE__));
 $upload=dirname(__FILE__).'/opencart_v'.$version.'/upload/';
+$base_dir=str_replace('/pagoda','', dirname(__FILE__));
 $dst=$base_dir.'/pagoda/'.$fn;
 
 /* fetch & extract the package */
@@ -33,8 +33,8 @@ $files=array(
 	'install/template/step_3.tpl'
 );
 foreach($files as $file) {
-	echo 'pagoda/config/'.$file.' >> '.$upload.$file;
-	copy('pagoda/config/'.$file, $upload.$file);
+	echo dirname(__FILE__).'/pagoda/config/'.$file.' >> '.$upload.$file;
+	copy(dirname(__FILE__).'/pagoda/config/'.$file, $upload.$file);
 }
 
 /* the end */

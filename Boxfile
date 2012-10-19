@@ -15,9 +15,11 @@ web1:
     - "php pagoda/oc-install.php"
     - "mv pagoda/opencart_v1.5.4.1/upload/image/cache pagoda/cache"
     - "mv pagoda/opencart_v1.5.4.1/upload/image/data pagoda/data"
+    - "mv pagoda/opencart_v1.5.4.1/upload/install pagoda/install"
     - "mv pagoda/opencart_v1.5.4.1/upload/* ./"
   after_deploy:
     - "mkdir image/cache; cp -rv pagoda/cache/* image/cache/"
     - "mkdir image/data; cp -rv pagoda/data/* image/data/"
+    - "mkdir install; cp -rv pagoda/install/* install/"
 db1:
   name: openCart

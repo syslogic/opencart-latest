@@ -10,13 +10,13 @@
 /* the given environment */
 $version='1.5.4.1';
 $fn='opencart_v'.$version.'.zip';
-$src='http://github.com/downloads/opencart/opencart/'.$fn;
+$src='https://github.com/downloads/opencart/opencart/'.$fn;
 $base_dir=str_replace('/pagoda','', dirname(__FILE__));
 $upload=dirname(__FILE__).'/opencart_v'.$version.'/upload';
 $dst=$base_dir.'/pagoda/'.$fn;
 
 /* fetch the package */
-wget($src, $dst);
+wget_ssl($src, $dst);
 
 /* extract the package */
 $zip = new ZipArchive;
@@ -28,10 +28,17 @@ if($zip->open($dst) === TRUE) {
 /* the end */
 echo 'openCart v'.$version.' will now be deployed.';
 
-function wget($src, $dst){
+function wget_ssl($src, $dst){
 	$fp = fopen($dst, 'w');
 	$curl = curl_init();
-	$opt = array(CURLOPT_URL => $src, CURLOPT_HEADER => false, CURLOPT_FILE => $fp);
+	$opt = array(
+		CURLOPT_URL => $src,
+		CURLOPT_HEADER => FALSE,
+		CURLOPT_FILE => $fp
+		CURLOPT_SSL_VERIFYPEER => TRUE,
+		CURLOPT_SSL_VERIFYHOST => 2,
+		CURLOPT_CAINFO, dirname(__FILE__).'/GTECyberTrustGlobalRoot.crt'
+	);
 	curl_setopt_array($curl, $opt);
 	$rsp = curl_exec($curl);
 	if($rsp===FALSE){

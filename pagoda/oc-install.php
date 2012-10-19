@@ -10,8 +10,8 @@
 /* the given environment */
 $version='1.5.4.1';
 $fn='opencart_v'.$version.'.zip';
-$src='https://github.com/downloads/opencart/opencart/'.$fn;
-$base_dir = str_replace('/pagoda','', dirname(__FILE__));
+$src='http://github.com/downloads/opencart/opencart/'.$fn;
+$base_dir=str_replace('/pagoda','', dirname(__FILE__));
 $upload=dirname(__FILE__).'/opencart_v'.$version.'/upload';
 $dst=$base_dir.'/pagoda/'.$fn;
 

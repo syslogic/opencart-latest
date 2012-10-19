@@ -23,7 +23,7 @@ if($zip->open($dst) === TRUE) {
 	$zip->close();
 }
 
-/* patching the installer */
+/* patching the OC installer */
 $files=array(
 	'config.php',
 	'admin/config.php',
@@ -33,6 +33,7 @@ $files=array(
 	'install/template/step_3.tpl'
 );
 foreach($files as $file) {
+	echo 'pagoda/config/'.$file.' >> '.$upload.$file;
 	copy('pagoda/config/'.$file, $upload.$file);
 }
 

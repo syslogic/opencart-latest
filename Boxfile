@@ -17,7 +17,7 @@ web1:
     - "mv pagoda/opencart_v1.5.4.1/upload/image/data pagoda/data"
     - "mv pagoda/opencart_v1.5.4.1/upload/* ./"
   after_deploy:
-    - "mkdir image/cache; cp -v pagoda/cache/* image/cache/"
-    - "mkdir image/data; cp -v pagoda/data/* image/data/"
+    - "mkdir image/cache; cp -rv pagoda/cache/* image/cache/"
+    - "mkdir image/data; cp -rv pagoda/data/* image/data/"
 db1:
   name: openCart

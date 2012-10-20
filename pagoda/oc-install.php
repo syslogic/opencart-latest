@@ -37,6 +37,9 @@ foreach($files as $file) {
 	file_put_contents($upload.$file, file_get_contents(dirname(__FILE__).'/config/'.$file));
 }
 
+/* enable url-rewriting */
+rename($upload.'.htaccess.txt', '.htaccess');
+
 /* the end */
 echo 'openCart v'.$version.' will now be deployed.';
 

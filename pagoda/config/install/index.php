@@ -1,4 +1,8 @@
 <?php
+
+/* security fix */
+if(preg_match('/pagoda/',dirname(__FILE__))){die('nice try - pls die.')}
+
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 

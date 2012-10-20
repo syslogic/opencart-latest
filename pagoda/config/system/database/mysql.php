@@ -38,7 +38,7 @@ final class MySQL {
 				
 				unset($data);
 				
-				return $query;	
+				return $query;
 			} else {
 				return true;
 			}
@@ -46,7 +46,9 @@ final class MySQL {
 		else {
 			
 			/* fix for PagodaBox: redirect in case no tables exist */
-			if(mysql_errno($this->link)==1146){die(header('Location: '.$_SERVER['HTTP_HOST'].'/install');)}
+			if(mysql_errno($this->link)==1146){
+				die(header('Location: '.$_SERVER['HTTP_HOST'].'/install'));
+			}
 			
 			trigger_error('Error: ' . mysql_error($this->link) . '<br />Error No: ' . mysql_errno($this->link) . '<br />' . $sql);
 			exit();

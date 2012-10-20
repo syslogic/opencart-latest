@@ -20,6 +20,6 @@ web1:
   after_deploy:
     - "mkdir image/cache; cp -rv pagoda/cache/* image/cache/"
     - "mkdir image/data; cp -rv pagoda/data/* image/data/"
-    - "mkdir install; cp -rv pagoda/install/* install/"
+    - "cp -rv pagoda/install/* install/"
 db1:
   name: openCart

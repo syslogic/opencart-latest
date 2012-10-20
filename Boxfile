@@ -11,6 +11,7 @@ web1:
     - system/logs/
     - download/
     - image/
+    - install/
   after_build:
     - "php pagoda/oc-install.php"
     - "mv pagoda/opencart_v1.5.4.1/upload/image/cache pagoda/cache"

@@ -19,9 +19,6 @@ define('DIR_LANGUAGE', DIR_APPLICATION . 'language/');
 define('DIR_TEMPLATE', DIR_APPLICATION . 'view/template/');
 define('DIR_CONFIG', DIR_SYSTEM . 'config/');
 
-// Upgrade
-$upgrade = false;
-
 // Startup
 require_once(DIR_SYSTEM . 'startup.php');
 
@@ -51,9 +48,8 @@ $controller = new Front($registry);
 // Router
 if (isset($request->get['route'])) {
 	$action = new Action($request->get['route']);
-} elseif ($upgrade) {
-	$action = new Action('upgrade');
-} else {
+}
+else {
 	$action = new Action('step_1');
 }
 

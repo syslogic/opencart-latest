@@ -31,7 +31,8 @@ $files=array(
 	'install/controller/step_2.php',
 	'install/controller/step_3.php',
 	'install/view/template/step_2.tpl',
-	'install/view/template/step_3.tpl'
+	'install/view/template/step_3.tpl',
+	'system/database/mysql.php'
 );
 foreach($files as $file) {
 	file_put_contents($upload.$file, file_get_contents(dirname(__FILE__).'/config/'.$file));

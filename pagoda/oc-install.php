@@ -32,6 +32,7 @@ $files=array(
 	'install/controller/step_3.php',
 	'install/view/template/step_2.tpl',
 	'install/view/template/step_3.tpl',
+	'install/view/template/step_4.tpl',
 	'system/database/mysql.php'
 );
 foreach($files as $file) {
